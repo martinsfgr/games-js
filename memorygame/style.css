@@ -1,0 +1,27 @@
+body{
+    align-items: center;
+    background: #3e3e3e;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+section{
+    align-items: center;
+    display: grid;
+    grid-auto-rows: minmax(auto, calc(15vw + 20px));
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    height: calc(100vh - 25%);
+    justify-content: center;
+    width: 65%;
+}
+
+section div{
+    background-color: aliceblue;
+    border-radius: 5px;
+    height: 175px;
+    width: 140px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}

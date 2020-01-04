@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script defer src="script.js"></script>
+    <link rel="shortcut icon" href="img/hashtag.ico" type="image/x-icon"/>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style.css">
+    <title>jogodavelha</title>
+</head>
+
+<body>
+    <nav id="home">
+        <h1>#jogodavelha</h1>
+        <p class="bo5">melhor de 5</p>
+        <p>insira o nome dos jogadores e clique em<span> iniciar </span>para começar a partida :)</p>
+        <fieldset>
+            <label for="JogadorX">playerX:</label>
+            <input class='input' type="text" maxlength="13" id='jogadorX'>
+            <label for="JogadorO">playerO:</label>
+            <input class='input' type="text" maxlength="13" id='jogadorO'>
+        </fieldset>
+        <input type="button" value="Iniciar" onclick = "javascript: iniciarJogo();" >
+    </nav>
+
+    <div id="placar">
+        <div class="px" id="pxid"> <p class="x"><img src="img/xp.png" alt=""></p> 
+                         <p id="placarx">0</p></div>
+
+        <div class="po" id="poid"> <p class="o"><img src="img/op.png" alt=""></p>
+                         <p id="placaro">0</p></div>
+    </div>
+
+    <div id="mostrador">
+        <p id="mostradorO">Vez de <img src="img/o.png" alt=""></p>
+        <p id="mostradorX">Vez de <img src="img/x.png" alt=""></p>
+    </div>
+
+    <header id="tabuleiro">
+        <section id='a1'></section>
+        <section id='a2'></section>
+        <section id='a3'></section>
+        <section id='b1'></section>
+        <section id='b2'></section>
+        <section id='b3'></section>
+        <section id='c1'></section>
+        <section id='c2'></section>
+        <section id='c3'></section>
+    </header>
+</body>
+
+</html>

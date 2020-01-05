@@ -25,14 +25,14 @@ function atualizarMostrador(){
 }
 
 function clicar(event){
-    console.log(click);
+
     if(event.target.classList.contains('X') || (event.target.classList.contains('O'))){
         alert('Jogava inválida. Tente novamente!');
     }
     
     else if(click % 2 == 0){
         event.target.style.backgroundImage = imgx;
-        event.target.classList.add('X')
+        event.target.classList.add('X');
         click++;
         validarVitoria();
         atualizarMostrador();
@@ -41,7 +41,7 @@ function clicar(event){
     
     else{
         event.target.style.backgroundImage = imgo;
-        event.target.classList.add('O')
+        event.target.classList.add('O');
         click++;
         validarVitoria();
         atualizarMostrador();
@@ -55,7 +55,6 @@ for(let div of divs){
 
 function validarVitoria(){
 
-    //validarVitoriaX
     if(divs[0].classList.contains('X') && divs[1].classList.contains('X') && divs[2].classList.contains('X') ||
        divs[3].classList.contains('X') && divs[4].classList.contains('X') && divs[5].classList.contains('X') ||
        divs[6].classList.contains('X') && divs[7].classList.contains('X') && divs[8].classList.contains('X') ||
@@ -64,13 +63,12 @@ function validarVitoria(){
        divs[0].classList.contains('X') && divs[3].classList.contains('X') && divs[6].classList.contains('X') ||
        divs[1].classList.contains('X') && divs[4].classList.contains('X') && divs[7].classList.contains('X') ||
        divs[2].classList.contains('X') && divs[5].classList.contains('X') && divs[8].classList.contains('X') ){
-        alert(`${jogadorX.value} foi o vencedor da rodada!`);
+        alert('Jogador X foi o vencedor da rodada!');
         pX++;
         placarX.innerHTML = pX.toString();
         limparTabuleiro();
         }
 
-    //validarVitoriaO
     else if(divs[0].classList.contains('O') && divs[1].classList.contains('O') && divs[2].classList.contains('O') ||
             divs[3].classList.contains('O') && divs[4].classList.contains('O') && divs[5].classList.contains('O') ||
             divs[6].classList.contains('O') && divs[7].classList.contains('O') && divs[8].classList.contains('O') ||
@@ -79,7 +77,7 @@ function validarVitoria(){
             divs[0].classList.contains('O') && divs[3].classList.contains('O') && divs[6].classList.contains('O') ||
             divs[1].classList.contains('O') && divs[4].classList.contains('O') && divs[7].classList.contains('O') ||
             divs[2].classList.contains('O') && divs[5].classList.contains('O') && divs[8].classList.contains('O') ){
-        alert(`${jogadorO.value} foi o vencedor da rodada!`);
+        alert('Jogador O foi o vencedor da rodada!');
         limparTabuleiro();
         pO++;
         placarO.innerHTML = pO.toString();
@@ -92,11 +90,10 @@ function verificarVelha(){
     let jogadas = 0;
     for (let index = 0; index <= divs.length - 1; index++){
         if(divs[index].classList != ''){
-            jogadas++
+            jogadas++;
             if(jogadas == divs.length){
                 alert("EMPATE! O jogo deu velha.");
                 limparTabuleiro();
-                // window.location.reload();
             }
         }
     }
@@ -110,10 +107,12 @@ function limparTabuleiro(){
 }
 
 function terminarJogo(){
+
     if(pX == 3){
         alert(`${jogadorX.value} ganhou a melhor de 5! Parabéns!`);
         window.location.reload();
     }
+
     else if(pO == 3){
         alert(`${jogadorO.value} ganhou a melhor de 5! Parabéns!`);
         window.location.reload();
@@ -121,5 +120,5 @@ function terminarJogo(){
 }
 
 window.onload =	function(){
-    atualizarMostrador()
+    atualizarMostrador();
 }

@@ -45,6 +45,21 @@ function bloquearEncontradas(){
     }
 }
 
+function finalizarJogo(){
+    let checarClasse = 0;
+
+    for(i = 0; i < cartas.length; i++){
+        if(cartas[i].classList.contains("encontrado")){
+            checarClasse++;
+            console.log(checarClasse);
+            if(checarClasse == cartas.length){
+                alert('acho que o jogo acabou men');
+                window.location.reload();
+            }
+        }
+    }
+}
+
 function iniciarJogada(){
     primeiraCarta = null;
     segundaCarta = null;
@@ -65,6 +80,7 @@ function compararImagens(){
         primeiraCarta.classList.add("encontrado");
         segundaCarta.classList.add("encontrado");
         console.log('São iguais! :)');
+        finalizarJogo();
         iniciarJogada();
     }
 }
@@ -88,6 +104,8 @@ function executarJogada(event){
         console.log('Sou a primeira carta: ', primeiraCarta);
     }
 }
+
+alert('Oi =)');
 
 for(carta of cartas){
     abrirCarta(carta);

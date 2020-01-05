@@ -15,6 +15,9 @@
 // - função para travar os cliques (tratamento de erro)
 // - função para bloquear cliques em cartas encontradas
 
+let primeiraCarta;
+let segundaCarta;
+
 let cartas = document.getElementsByClassName('cards');
 console.log(cartas)
 
@@ -39,3 +42,67 @@ function embaralharCartas(listaImagens){
 
 let imagensEmbaralhadas = embaralharCartas(imagensDuplicadas);
 console.log('Essa é a lista embaralhada', imagensEmbaralhadas);
+
+function abrirCarta(carta){
+    carta.style.backgroundImage = `url(img/${imagensEmbaralhadas[Number(carta.id)]})`;
+    console.log(carta.style.backgroundImage);
+    carta.onclick = null;
+}
+
+function esconderCarta(carta){
+    carta.style.backgroundImage = "url('img/pngfaust.png')"
+}
+
+function bloquearEncontradas(){
+    for(let carta of cartas){
+        if(!carta.classList.contains("encontrado")){
+            esconderCarta(carta);
+        }
+    }
+}
+
+function iniciarJogada(){
+    [primeiraCarta, segundaCarta], [null, null];
+    bloquearEncontradas();
+}
+
+function compararImagens(){
+    if(primeiraCarta.style.backgroundImage !== segundaCarta.style.backgroundImage){
+        setTimeout(function(){
+            esconderCarta(primeiraCarta);
+            esconderCarta(segundaCarta);
+            iniciarJogada();
+        }, 1000);
+    }else{
+        primeiraCarta.classList.add("encontrado");
+        segundaCarta.classLista.add("encontrado");
+        iniciarJogada();
+    }
+}
+
+function travarClick(){
+    for(let carta of cartas){
+        carta.onclick = null;
+    }
+}
+
+function executarJogada(event){
+    abrirCarta(event.target);
+    if (primeiraCarta){
+        segundaCarta = event.target;
+        console.log(segundaCarta);
+        travarClick();
+        compararImagens();
+    }else{
+        primeiraCarta = event.target;
+        console.log(primeiraCarta);
+    }
+}
+
+for(carta of cartas){
+    abrirCarta(carta);
+}
+
+setTimeout(() => {
+    iniciarJogada();
+}, 1000);

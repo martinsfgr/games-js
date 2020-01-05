@@ -23,5 +23,5 @@ section div{
     width: 140px;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }

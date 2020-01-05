@@ -60,11 +60,11 @@ function validarVitoria(){
        divs[0].classList.contains('X') && divs[3].classList.contains('X') && divs[6].classList.contains('X') ||
        divs[1].classList.contains('X') && divs[4].classList.contains('X') && divs[7].classList.contains('X') ||
        divs[2].classList.contains('X') && divs[5].classList.contains('X') && divs[8].classList.contains('X') ){
-        alert('Jogador X foi o vencedor da rodada!');
-        pX++;
-        placarX.innerHTML = pX.toString();
-        limparTabuleiro();
-        }
+            alert('Jogador X foi o vencedor da rodada!');
+            pX++;
+            placarX.innerHTML = pX.toString();
+            limparTabuleiro();
+    }
 
     else if(divs[0].classList.contains('O') && divs[1].classList.contains('O') && divs[2].classList.contains('O') ||
             divs[3].classList.contains('O') && divs[4].classList.contains('O') && divs[5].classList.contains('O') ||
@@ -74,10 +74,10 @@ function validarVitoria(){
             divs[0].classList.contains('O') && divs[3].classList.contains('O') && divs[6].classList.contains('O') ||
             divs[1].classList.contains('O') && divs[4].classList.contains('O') && divs[7].classList.contains('O') ||
             divs[2].classList.contains('O') && divs[5].classList.contains('O') && divs[8].classList.contains('O') ){
-        alert('Jogador O foi o vencedor da rodada!');
-        limparTabuleiro();
-        pO++;
-        placarO.innerHTML = pO.toString();
+                alert('Jogador O foi o vencedor da rodada!');
+                limparTabuleiro();
+                pO++;
+                placarO.innerHTML = pO.toString();
     }else{
         verificarVelha();
     }
@@ -106,12 +106,12 @@ function limparTabuleiro(){
 function terminarJogo(){
 
     if(pX == 3){
-        alert(`${jogadorX.value} ganhou a melhor de 5! Parabéns!`);
+        alert('Jogador X ganhou a melhor de 5! Parabéns!');
         window.location.reload();
     }
 
     else if(pO == 3){
-        alert(`${jogadorO.value} ganhou a melhor de 5! Parabéns!`);
+        alert('Jogador O ganhou a melhor de 5! Parabéns!');
         window.location.reload();
     }
 }

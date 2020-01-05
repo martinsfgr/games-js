@@ -63,7 +63,10 @@ function bloquearEncontradas(){
 }
 
 function iniciarJogada(){
-    [primeiraCarta, segundaCarta], [null, null];
+    primeiraCarta = null;
+    segundaCarta = null;
+    console.log('Olha, a primeira carta agora é assim: ', primeiraCarta);
+    console.log('Olha, a segunda carta agora é assim: ', segundaCarta);
     bloquearEncontradas();
 }
 
@@ -72,11 +75,13 @@ function compararImagens(){
         setTimeout(function(){
             esconderCarta(primeiraCarta);
             esconderCarta(segundaCarta);
+            console.log('Não são iguais :(');
             iniciarJogada();
         }, 1000);
     }else{
         primeiraCarta.classList.add("encontrado");
-        segundaCarta.classLista.add("encontrado");
+        segundaCarta.classList.add("encontrado");
+        console.log('São iguais! :)');
         iniciarJogada();
     }
 }
@@ -84,6 +89,7 @@ function compararImagens(){
 function travarClick(){
     for(let carta of cartas){
         carta.onclick = null;
+        console.log('Tô travando o clique :)');
     }
 }
 
@@ -91,12 +97,12 @@ function executarJogada(event){
     abrirCarta(event.target);
     if (primeiraCarta){
         segundaCarta = event.target;
-        console.log(segundaCarta);
+        console.log('Sou a segunda carta', segundaCarta);
         travarClick();
         compararImagens();
     }else{
         primeiraCarta = event.target;
-        console.log(primeiraCarta);
+        console.log('Sou a primeira carta: ', primeiraCarta);
     }
 }
 

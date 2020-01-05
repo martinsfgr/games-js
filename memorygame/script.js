@@ -51,7 +51,7 @@ function abrirCarta(carta){
 
 function esconderCarta(carta){
     carta.style.backgroundImage = "url('img/pngfaust.png')"
-    carta.onclick = executarJogada();
+    carta.onclick = executarJogada;
 }
 
 function bloquearEncontradas(){

@@ -1,20 +1,3 @@
-window.onload =	function() {document.getElementById('tabuleiro').style.visibility = 'hidden';
-                            document.getElementById('placar').style.visibility = 'hidden';
-                            document.getElementById('mostrador').style.visibility = 'hidden';
-                            document.getElementById('mostradorX').style.visibility = 'hidden';
-                            document.getElementById('mostradorO').style.visibility = 'hidden';
-                        }
-
-iniciarJogo = function(){
-    document.getElementById('tabuleiro').style.visibility = 'visible';
-    document.getElementById('placar').style.visibility = 'visible';
-    document.getElementById('mostrador').style.visibility = 'visible';
-    document.getElementById('mostradorX').style.visibility = 'visible';
-    document.getElementById('home').style.visibility = 'hidden';
-}
-
-let jogadorX = document.getElementById('jogadorX');
-let jogadorO = document.getElementById('jogadorO');
 let placarX = document.getElementById('placarx');
 let placarO = document.getElementById('placaro');
 let pX = 0;
@@ -25,11 +8,7 @@ let imgo = 'url(img/o.png)';
 
 let divs = document.querySelectorAll("section");
 
-// function sortearJogador(max = 3, min = 1){
-//     return Math.floor(Math.random()*(max - min))+min;
-// }
-
-let click = 2;
+let click = 3;
 
 function atualizarMostrador(){
     if(click % 2 == 0){
@@ -139,4 +118,8 @@ function terminarJogo(){
         alert(`${jogadorO.value} ganhou a melhor de 5! Parabéns!`);
         window.location.reload();
     }
+}
+
+window.onload =	function(){
+    atualizarMostrador()
 }

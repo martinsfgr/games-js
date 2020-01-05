@@ -2,12 +2,9 @@ let placarX = document.getElementById('placarx');
 let placarO = document.getElementById('placaro');
 let pX = 0;
 let pO = 0;
-
 let imgx = 'url(img/x.png)';
 let imgo = 'url(img/o.png)';
-
 let divs = document.querySelectorAll("section");
-
 let click = 3;
 
 function atualizarMostrador(){

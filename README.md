@@ -4,7 +4,7 @@ repositório para criar jogos simples pelo javascript para treinar os conhecimen
 ### next tasks:
 
 - [x] tictactoe
-- [ ] memorygame
+- [x] memorygame
 - [ ] hangman
 - [ ] genius
 - [ ] snake

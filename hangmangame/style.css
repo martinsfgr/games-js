@@ -22,6 +22,7 @@ header h1 {
 
 header h1 #word-tip {
   font-size: 4.25rem;
+  text-transform: uppercase;
 }
 
 header p {
@@ -39,6 +40,7 @@ main {
 
 main #word {
   font-size: 2.5rem;
+  text-transform: uppercase;
 }
 main #keyboard {
   margin-top: 50px;
@@ -55,6 +57,13 @@ main #keyboard button {
   width: 40px;
 }
 
-main #keyboard button:hover {
-  background-color: rgb(156, 155, 155);
+
+main #keyboard button:disabled {
+  background-color: rgb(53, 53, 53);
+  color: white;
+  cursor: not-allowed;
+}
+
+main #keyboard button:enabled:hover {
+  background-color: rgb(155, 155, 155);
 }

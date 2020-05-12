@@ -35,7 +35,7 @@ const normalizarPalavra = () => {
 palavra = normalizarPalavra();
 let statusPalavra;
 let palpites = [];
-let palpite = '';
+
 let chances = 5;
 document.getElementById("chances-remaining").innerHTML = chances;
 

@@ -90,7 +90,7 @@ const verificarVitoria = () => {
 }
 
 const verificarDerrota = () => {
-  if (chances == 0) {
+  if (chances == -1) {
     alert('Você perdeu =(');
     window.location.reload();
   }
@@ -101,3 +101,29 @@ atualizarStatus();
 console.log("A dica é:", dica);
 console.log("A palavra é:", palavra);
 console.log("O status da palavra é:", statusPalavra);
+
+
+// FLUXO DAS FUNÇÕES:
+
+// 1. O arquivo vai ser executado e, de primeiro momento, vai ser escolhido um objeto com 
+// alguma palavra e, em seguida, a função atualizarStatus(); é executada (linha 99).
+// A função atualizarStatus() passa por cada uma das letras da palavra, verificando se ela
+// existe dentro da lista de palpites. Porém, como a lista de palpites começa vazia, o retorno da função
+// vai ser todas as letras da palavras transformadas em underlines.
+
+// 2. Fica a disposição do usuário, clicar em qualquer botão disponível da tela, do qual foi gerado
+// automaticamente com o id letra correspondente, junto com um evento de onclick, que executa a função
+// verificarPalpite(), que tem como parâmetro o id do botão que foi clicado.
+
+// 3. A função verificarPalpite(letra), quando executada, desabilita o botão, para que aquela letra não
+// seja mais acessada e atualiza a lista de palpites com a letra
+// passada pelo parâmetro e, em seguida, verifica se essa letra existe na palavra. Se sim, a função
+// atualizarStatus(); é executada para substituir todos os underlines pela letra correta, de acordo
+// com o que foi adicionado dentro da lista de palpites.
+
+// 4. A cada vez que um palpite for correto, a função verificarVitoria(); é executada para verificar
+// se todas se todos os underlines foram substituídos por alguma letra e se está exatamente igual a
+// palavra sorteada.
+
+// 5. A cada vez que um palpite for incorreto, o número de chances diminui, até que o usuário não 
+// possa mais jogar e, assim, reiniciando a página.

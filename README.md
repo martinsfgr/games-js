@@ -14,8 +14,12 @@
 ![velha](https://user-images.githubusercontent.com/52453558/78082270-ee5c6300-7388-11ea-97e8-17e05054ea28.gif)
 
 
+- Jogo da Forca
+
+![hangmangame](https://user-images.githubusercontent.com/52453558/81758663-d94f1580-9498-11ea-92e5-64c65a5690d9.gif)
+
+
 ### Jogos a serem feitos (sabe-se lá quando):
-- [ ] Jogo da Forca
 - [ ] Genius
 - [ ] Snake Game
 

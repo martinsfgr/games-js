@@ -16,7 +16,8 @@
 
 - Jogo da Forca
 
-![hangmangame](https://user-images.githubusercontent.com/52453558/81758663-d94f1580-9498-11ea-92e5-64c65a5690d9.gif)
+![hangmangame](https://user-images.githubusercontent.com/52453558/81879317-cacc3100-9560-11ea-9c15-bf203c945d92.gif)
+
 
 
 ### Jogos a serem feitos (sabe-se lá quando):
